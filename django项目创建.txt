@@ -1,0 +1,14 @@
+最近总在忙活爬虫，突然发现开发的代码敲起来都生涩了，仔细反省一下确实，IT这个行业就是这样，除非你天禀异赋，否则有些东西长时间不用确实会忘记，搭个环境，写个逻辑，部署个项目忘记个小东西太正常不过了，毕竟人脑不是电脑，所以我们有必要将一些细节的小东西整理好，排好顺序，写好说明，在需要的时候就会节省很多不必要的麻烦，今天就先从创建一个django项目开始整理吧，创建项目前，先要看明白项目需求，用什么软件，用什么模块，都是什么版本都要事先规定好，可以通过虚拟环境统一安装依赖包，也可以从doctor拉个镜像出来也可以。
+下面我们先来搭建虚拟环境吧
+1、在安装django之前，我们需要安装python开发的虚拟环境virtualenv,一个相对独立的开发环境，不不担心会用版本混淆的问题
+(1)安装virtualenv环境：pip install virtualenv
+(2)安装好之后，我们开始创建一个虚拟环境 ，首先要切换到我们的项目目录，然后执行命令 virtualenv env 你会发现生成一个env文件夹，这时虚拟环境就创建好了，
+(3)然后我们就要启动也就是激活这个虚拟环境，在命令行中cd到env文件夹，再cd到Scripts文件夹里，执行activate.bat
+(4)激活之后前面会出现一个(env)，这就是成功了，然后我们就可以安装依赖包了，当然依赖包的txt文件也要在和env文件夹相同目录，导包命令pip install -r package.txt你的txt文本名字是什么就写什么，不要照我的抄,然后就等待一个一个下载了。
+在此也写一下导出依赖包的命令，以供参考pip freeze>package.txt
+(5)到了这一步我们就可以创建django项目了，创建命令：
+django-admin startproject C2C_shop(项目名称) 项目根目录创建ok
+(6)接下来我们就要创建app模块了，比如电商网站，在项目需求分析时就要求分出用户，商品，订单，购物车四个模块，那么我就创建4个app:user,goods,cart,order
+创建app的命令，在含有manage.py的文件目录下执行：python manage.py startapp user
+(7)打开pychram,打开项目，配置环境变量File->settings->project:->project interpreter->右上角齿轮add->找到你之前建立的env中的scripts下的python.exe即可
+(8)项目settings配置
