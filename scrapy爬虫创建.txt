@@ -1,0 +1,5 @@
+1、首先创建一个虚拟环境并激活，跟django里面的一样，在此就不多说了，不过要强调一下，安装依赖包的时候要在script文件夹下执行pip
+2、返回项目目录创建一个爬虫项目，scrapy startproject baidu
+3、打开pycharm，配置环境
+ scrapy genspider jobbole(名称) blog.jobbole.com(域名)
+4、
